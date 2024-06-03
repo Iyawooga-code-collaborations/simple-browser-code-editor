@@ -1,0 +1,80 @@
+:root {
+  --lineHeight: 24px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #222;
+}
+
+#editor {
+  box-sizing: border-box;
+  overflow-y: hidden;
+  /*
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: top; */
+
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  /* padding: 2em; */
+}
+
+body {
+  background-color: #111;
+  color: white;
+}
+
+#editor .code,
+#editor .preview {
+  all: unset;
+}
+
+#editor .code,
+#editor .preview {
+  color: #999;
+  display: block;
+  font-family: "MonoLisa", monospace;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  resize: none;
+  line-height: var(--lineHeight);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* grid-column: 1 / 1;
+  grid-row: 1 / 1; */
+
+  /* height: 50%; */
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* word-break: keep-all; */
+}
+
+#editor .preview {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#editor .code {
+  color: white;
+  color: rgba(255, 255, 255, 0.2);
+  caret-color: magenta;
+  overflow: auto;
+  padding-bottom: var(--lineHeight);
+}
+
+#editor .preview {
+  pointer-events: none;
+}
