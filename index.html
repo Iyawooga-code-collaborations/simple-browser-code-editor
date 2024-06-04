@@ -8,13 +8,22 @@
       data-manual
     ></script>
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css"
+      integrity="sha512-kSwGoyIkfz4+hMo5jkJngSByil9jxJPKbweYec/UgS+S1EgE45qm4Gea7Ks2oxQ7qiYyyZRn66A9df2lMtjIsw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="/styles/editor.css" />
-    <link rel="stylesheet" href="/styles/syntax.css" />
   </head>
   <body>
     <div id="editor">
       <div class="preview"></div>
-      <textarea class="code" spellcheck="false"></textarea>
+      <div contenteditable="plaintext-only" class="code" spellcheck="false">
+        <span>this is a span</span> <span>123456789</span> 123456789
+      </div>
     </div>
 
     <script type="module" src="/js/editor.js"></script>

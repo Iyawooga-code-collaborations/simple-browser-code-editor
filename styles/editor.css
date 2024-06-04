@@ -13,17 +13,13 @@ body {
 
 #editor {
   box-sizing: border-box;
-  overflow-y: hidden;
-  /*
   display: grid;
   grid-template: 1fr / 1fr;
-  place-items: top; */
-
+  place-items: top;
   height: 100%;
   width: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-  /* padding: 2em; */
+  overflow-y: auto;
+  padding: 2em;
 }
 
 body {
@@ -38,6 +34,9 @@ body {
 
 #editor .code,
 #editor .preview {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+
   color: #999;
   display: block;
   font-family: "MonoLisa", monospace;
@@ -46,20 +45,11 @@ body {
   background: transparent;
   resize: none;
   line-height: var(--lineHeight);
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: calc(16 * 80) px;
   box-sizing: border-box;
-
-  /* grid-column: 1 / 1;
-  grid-row: 1 / 1; */
-
-  /* height: 50%; */
   white-space: pre;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  /* word-break: keep-all; */
+  border: 2px solid red;
 }
 
 #editor .preview {
@@ -71,8 +61,8 @@ body {
   color: white;
   color: rgba(255, 255, 255, 0.2);
   caret-color: magenta;
-  overflow: auto;
-  padding-bottom: var(--lineHeight);
+  /* overflow: auto; */
+  /* padding-bottom: var(--lineHeight); */
 }
 
 #editor .preview {
