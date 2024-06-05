@@ -9,7 +9,6 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: #222;
 }
 
 #editor {
@@ -22,11 +21,7 @@ body {
   overflow: auto;
   padding: var(--padding);
   min-width: 400px;
-}
-
-body {
-  background-color: #111;
-  color: white;
+  background-color: #161524;
 }
 
 #editor .code,
@@ -54,7 +49,6 @@ body {
 
 #editor .preview {
   height: auto;
-  overflow: hidden;
   pointer-events: none;
 }
 
