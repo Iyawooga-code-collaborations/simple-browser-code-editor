@@ -48,25 +48,19 @@ body {
   resize: none;
   line-height: var(--lineHeight);
   height: auto;
-  width: calc(16 * 80) px;
+  width: 100%;
   box-sizing: border-box;
   white-space: pre-wrap;
+  border: 1px solid pink;
 }
 
 #editor .preview {
   overflow: hidden;
   pointer-events: none;
-  /* position: absolute;
-  top: var(--padding);
-  left: var(--padding); */
 }
 
 #editor .code {
   color: white;
   color: rgba(255, 255, 255, 0.2);
   caret-color: magenta;
-}
-
-#editor .preview {
-  pointer-events: none;
 }
