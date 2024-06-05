@@ -13,14 +13,15 @@ body {
 }
 
 #editor {
-  box-sizing: border-box;
   display: grid;
   grid-template: 1fr / 1fr;
   place-items: top;
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
-  overflow-y: auto;
+  overflow: auto;
   padding: var(--padding);
+  min-width: 400px;
 }
 
 body {
@@ -37,30 +38,27 @@ body {
 #editor .preview {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
-
-  overflow: hidden;
   color: #999;
   display: block;
-  font-family: "MonoLisa", monospace;
+  font-family: monospace;
   font-size: 16px;
   outline: none;
   background: transparent;
   resize: none;
   line-height: var(--lineHeight);
-  height: auto;
-  width: 100%;
+  width: auto;
   box-sizing: border-box;
   white-space: pre-wrap;
-  border: 1px solid pink;
+  overflow: hidden;
 }
 
 #editor .preview {
+  height: auto;
   overflow: hidden;
   pointer-events: none;
 }
 
 #editor .code {
-  color: white;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0);
   caret-color: magenta;
 }
