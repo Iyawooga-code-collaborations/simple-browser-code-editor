@@ -1,37 +1,43 @@
 const $editor = document.querySelector("#editor");
 const $preview = $editor.querySelector(".preview");
 const $code = $editor.querySelector(".code");
-const lineHeight = 24;
+const lineHeight = parseInt(window.getComputedStyle($code).lineHeight);
 const characterWidth = 16;
 const lineWrap = 80;
 
 let syntax;
-let changeDetected = true;
+let previousRaw = "";
 
 function mirror() {
   const scrollPos = $editor.scrollTop;
   const snap = Math.round(scrollPos / lineHeight) * lineHeight;
-
   const height = $editor.getBoundingClientRect().height;
   const visibleLines = Math.ceil(height / lineHeight);
 
   const startLine = Math.floor(scrollPos / lineHeight);
   const endLine = Math.ceil(startLine + visibleLines);
 
-  syntax = changeDetected
-    ? Prism.highlight($code.innerText, Prism.languages.javascript, "javascript")
-    : syntax;
+  const raw = $code.value;
 
-  changeDetected = false;
+  // $editor.scroll({ top: snap });
+  $code.style.height = `${$code.scrollHeight}px`;
 
-  const codeLines = $code.innerHTML.split("\n");
+  syntax =
+    raw !== previousRaw
+      ? Prism.highlight(raw, Prism.languages.javascript, "javascript")
+      : syntax;
+
+  previousRaw = raw;
+
+  const codeLines = raw.split("\n");
   const syntaxLines = syntax.split("\n");
+  // .map((line) => `<span class="line">${line}</span>`);
 
-  const lines = codeLines.map((line, index) =>
+  const previewLines = codeLines.map((line, index) =>
     index >= startLine && index <= endLine ? syntaxLines[index] : line,
   );
 
-  $preview.innerHTML = lines.flat().join("\n");
+  $preview.innerHTML = previewLines.join("\n");
 }
 
 $code.addEventListener("input", () => {
@@ -39,7 +45,5 @@ $code.addEventListener("input", () => {
   mirror();
 });
 
-$editor.addEventListener("scroll", mirror);
+$editor.addEventListener("scrollend", mirror);
 window.addEventListener("resize", mirror);
-
-mirror();

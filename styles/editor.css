@@ -1,5 +1,6 @@
 :root {
   --lineHeight: 24px;
+  --padding: 2rem;
 }
 
 html,
@@ -19,7 +20,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-y: auto;
-  padding: 2em;
+  padding: var(--padding);
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
 
+  overflow: hidden;
   color: #999;
   display: block;
   font-family: "MonoLisa", monospace;
@@ -48,21 +50,21 @@ body {
   height: auto;
   width: calc(16 * 80) px;
   box-sizing: border-box;
-  white-space: pre;
-  border: 2px solid red;
+  white-space: pre-wrap;
 }
 
 #editor .preview {
   overflow: hidden;
   pointer-events: none;
+  /* position: absolute;
+  top: var(--padding);
+  left: var(--padding); */
 }
 
 #editor .code {
   color: white;
   color: rgba(255, 255, 255, 0.2);
   caret-color: magenta;
-  /* overflow: auto; */
-  /* padding-bottom: var(--lineHeight); */
 }
 
 #editor .preview {

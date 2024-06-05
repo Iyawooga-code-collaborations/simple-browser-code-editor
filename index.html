@@ -21,11 +21,18 @@
   <body>
     <div id="editor">
       <div class="preview"></div>
-      <div contenteditable="plaintext-only" class="code" spellcheck="false">
-        <span>this is a span</span> <span>123456789</span> 123456789
-      </div>
+      <textarea class="code" spellcheck="false"></textarea>
     </div>
 
-    <script type="module" src="/js/editor.js"></script>
+    <script src="/js/editor.js"></script>
+
+    <script>
+      (async function load() {
+        const res = await fetch("/js/editor.js");
+        const js = await res.text();
+        document.querySelector(".code").value = Array(10).fill(js).join("\n");
+        mirror();
+      })();
+    </script>
   </body>
 </html>
