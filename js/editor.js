@@ -10,7 +10,7 @@ let previousRaw = "";
 
 function mirror() {
   const scrollPos = $editor.scrollTop;
-  const snap = Math.round(scrollPos / lineHeight) * lineHeight;
+  // const snap = Math.round(scrollPos / lineHeight) * lineHeight;
   const height = $editor.getBoundingClientRect().height;
   const visibleLines = Math.ceil(height / lineHeight);
 
