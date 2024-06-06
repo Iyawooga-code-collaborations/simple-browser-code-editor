@@ -21,7 +21,7 @@ body {
   overflow: auto;
   padding: var(--padding);
   min-width: 400px;
-  background-color: #161524;
+  background-color: #1a1723;
 }
 
 #editor .code,
@@ -50,6 +50,7 @@ body {
 #editor .preview {
   height: auto;
   pointer-events: none;
+  color: #ccc;
 }
 
 #editor .code {
