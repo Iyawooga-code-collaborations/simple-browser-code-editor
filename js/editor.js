@@ -21,3 +21,4 @@ $code.addEventListener("keydown", (ev) => {
 });
 
 $code.addEventListener("input", mirror);
+mirror();
