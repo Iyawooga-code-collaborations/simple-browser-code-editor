@@ -16,7 +16,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="/styles/editor.css" />
+    <link rel="stylesheet" href="./styles/editor.css" />
   </head>
   <body>
     <div id="editor">
@@ -24,12 +24,12 @@
       <textarea class="code" spellcheck="false"></textarea>
     </div>
 
-    <script src="/js/editor.js"></script>
+    <script src="./js/editor.js"></script>
 
     <script>
       // just to populate the editor with something....
       (async function load() {
-        const res = await fetch("/js/editor.js");
+        const res = await fetch("./js/editor.js");
         document.querySelector(".code").value = await res.text();
         mirror();
       })();
