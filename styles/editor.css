@@ -1,30 +1,21 @@
-:root {
-  --lineHeight: 24px;
-}
-
 html,
 body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   padding: 0;
   margin: 0;
-  background-color: #222;
 }
 
 #editor {
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   display: grid;
   grid-template: 1fr / 1fr;
   place-items: top;
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-  padding: 2em;
-}
-
-body {
-  background-color: #111;
-  color: white;
+  overflow: auto;
+  padding: 2rem;
+  background-color: #1a1723;
 }
 
 #editor .code,
@@ -34,37 +25,23 @@ body {
 
 #editor .code,
 #editor .preview {
+  height: auto;
   grid-column: 1 / 1;
   grid-row: 1 / 1;
-
-  color: #999;
-  display: block;
-  font-family: "MonoLisa", monospace;
+  font-family: Monaco, monospace;
   font-size: 16px;
-  outline: none;
-  background: transparent;
   resize: none;
-  line-height: var(--lineHeight);
-  height: auto;
-  width: calc(16 * 80) px;
-  box-sizing: border-box;
-  white-space: pre;
-  border: 2px solid red;
+  line-height: 24px;
+  white-space: pre-wrap;
+  overflow: hidden;
 }
 
 #editor .preview {
-  overflow: hidden;
   pointer-events: none;
+  color: #ccc;
 }
 
 #editor .code {
-  color: white;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0);
   caret-color: magenta;
-  /* overflow: auto; */
-  /* padding-bottom: var(--lineHeight); */
-}
-
-#editor .preview {
-  pointer-events: none;
 }

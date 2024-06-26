@@ -10,8 +10,8 @@
 
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css"
-      integrity="sha512-kSwGoyIkfz4+hMo5jkJngSByil9jxJPKbweYec/UgS+S1EgE45qm4Gea7Ks2oxQ7qiYyyZRn66A9df2lMtjIsw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-okaidia.min.css"
+      integrity="sha512-5HvW0a7ihK3ro2KhwEksDHXgIezsTeZybZDIn8d8Y015Ny+t7QWSIjnlCTjFzlK7Klb604HLGjsNqU/i5mJLjQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -21,11 +21,18 @@
   <body>
     <div id="editor">
       <div class="preview"></div>
-      <div contenteditable="plaintext-only" class="code" spellcheck="false">
-        <span>this is a span</span> <span>123456789</span> 123456789
-      </div>
+      <textarea class="code" spellcheck="false"></textarea>
     </div>
 
-    <script type="module" src="/js/editor.js"></script>
+    <script src="/js/editor.js"></script>
+
+    <script>
+      // just to populate the editor with something....
+      (async function load() {
+        const res = await fetch("/js/editor.js");
+        document.querySelector(".code").value = await res.text();
+        mirror();
+      })();
+    </script>
   </body>
 </html>
