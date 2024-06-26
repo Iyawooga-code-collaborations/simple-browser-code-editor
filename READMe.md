@@ -1,0 +1,3 @@
+# Super simple _(mostly CSS)_ browser code editor.
+
+Consists of a textarea with transparent text on top of a Prism rendered preview inside a div that scroll together. That's it...
